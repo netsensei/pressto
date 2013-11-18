@@ -1,0 +1,12 @@
+app/uploads/
+app/blogs.dir/
+app/upgrade/
+app/backup-db/
+app/advanced-cache.php
+app/wp-cache-config.php
+app/cache/
+app/backups/
+wp/
+deploy/
+Capfile
+config-*.php
