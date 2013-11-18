@@ -79,6 +79,42 @@ The branch in you project repo which represents the production version:
 ````ruby
 set :branch, "master"
 ````
+## WordPress Configuration
+
+Capistrano keeps static files (ie images, configuration,...) in a separate
+`shared` folder on the remote host.
+
+You'll need to add an `uploads/` folder. This contains all your uploaded media.
+
+You'll need to add a `config-{development|production|staging}.php` file. This
+file contains your environment specific db settings.
+
+Example:
+
+````php
+<?php
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'PROD_project');
+
+/** MySQL database username */
+define('DB_USER', 'PROD_dbuser');
+
+/** MySQL database password */
+define('DB_PASSWORD', 'password');
+
+/** MySQL hostname */
+define('DB_HOST', 'localhost');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
+
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
+````
+
+Capistrano will automatically symlink to these items with each deployment.
 
 ## Deployement
 
