@@ -23,6 +23,7 @@ good overview on how this should work, and what the setup will entail:
 ````bash
 $ git clone https://raw.github.com/netsensei/pressto
 $ cd pressto
+$ bundle install
 $ composer install
 ````
 
